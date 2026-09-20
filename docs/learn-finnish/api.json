@@ -1,6 +1,6 @@
 {
   "apiBaseURL": "https://fy4wb4ffa6vkyat3zvgotx33x40ikupt.lambda-url.eu-north-1.on.aws",
-  "audioBaseURL": "https://pub-e6966983620c4500bc2582fd7ab9eab4.r2.dev",
+  "audioBaseURL": "https://pub-e6966983620c4500bc2582fd7ab9eab4.r2.de",
   "minAppVersion": "1.0.0",
   "talkEnabled": true,
   "cloudTtsEnabled": true,
