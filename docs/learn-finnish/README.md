@@ -9,7 +9,7 @@ These files live under `docs/` because GitHub Pages for this repo is configured 
 | Path | Purpose |
 |------|---------|
 | [`index.html`](index.html) | Privacy policy, terms (summary), support contact |
-| [`api.json`](api.json) | Remote config bootstrap (`apiBaseURL`, feature flags) for the iOS app |
+| [`api.json`](api.json) | Remote config: `apiBaseURL` (Lambda), `audioBaseURL` (R2), feature flags |
 
 ## Live URLs
 
