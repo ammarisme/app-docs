@@ -1,0 +1,7 @@
+{
+  "apiBaseURL": "",
+  "minAppVersion": "1.0.0",
+  "talkEnabled": true,
+  "cloudTtsEnabled": false,
+  "syncEnabled": true
+}
