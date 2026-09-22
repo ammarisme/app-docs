@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Learn Finnish — Finnish for adults who want to speak</title>
+  <meta name="description" content="Learn Finnish is an iOS app for adult self-learners: structured walks through grammar, spaced review, and optional AI conversation practice." />
+  <meta property="og:title" content="Learn Finnish" />
+  <meta property="og:description" content="Finnish for adults who want to speak — walk the map, review what sticks, talk when you’re ready." />
+  <meta property="og:image" content="https://ammarisme.github.io/app-docs/assets/lf-mark.png" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/lf-mark.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0a2f6b;
+      --cobalt: #0045a0;
+      --sky: #2e7ffd;
+      --ink: #0c1220;
+      --muted: #4a5568;
+      --fog: #e8eef8;
+      --snow: #f7f9fc;
+      --line: rgba(10, 47, 107, 0.12);
+      --radius: 14px;
+      --font-display: "Syne", ui-sans-serif, sans-serif;
+      --font-body: "Figtree", ui-sans-serif, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--ink);
+      background: var(--snow);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--cobalt); }
+    a:hover { color: var(--sky); }
+
+    /* —— Hero —— */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      min-height: 100vh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      color: #fff;
+    }
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      transform: scale(1.08);
+      animation: kenburns 28s ease-in-out infinite alternate;
+    }
+    @keyframes kenburns {
+      from { transform: scale(1.08) translate(0, 0); }
+      to { transform: scale(1.16) translate(-1.5%, -1%); }
+    }
+    .hero-shade {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(4, 18, 42, 0.35) 0%, rgba(4, 18, 42, 0.15) 38%, rgba(4, 18, 42, 0.72) 78%, rgba(4, 18, 42, 0.92) 100%),
+        linear-gradient(90deg, rgba(4, 18, 42, 0.45) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .hero-nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      display: flex;
+      justify-content: flex-end;
+      gap: 1.25rem;
+      padding: 1.25rem 1.5rem;
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+    .hero-nav a {
+      color: rgba(255, 255, 255, 0.88);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .hero-nav a:hover { color: #fff; }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(40rem, 100%);
+      padding: 2rem 1.5rem 3.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    @media (min-width: 768px) {
+      .hero-content {
+        padding: 3rem 4rem 4.5rem;
+        width: min(42rem, 100%);
+      }
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin: 0 0 0.35rem;
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+    }
+    .brand-mark {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 0.85rem;
+      background: #fff;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .brand-name {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(1.85rem, 5vw, 2.65rem);
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin: 0;
+      text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.35rem, 3.4vw, 1.85rem);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin: 0;
+      max-width: 22ch;
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+    }
+    .hero-lede {
+      margin: 0;
+      font-size: clamp(1rem, 2.2vw, 1.125rem);
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 34ch;
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.65s forwards;
+    }
+    .cta-row-static {
+      margin-top: 1.5rem;
+      opacity: 1;
+      animation: none;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.85rem 1.35rem;
+      border-radius: 999px;
+      font-family: var(--font-body);
+      font-size: 0.98rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+    .btn-primary {
+      background: var(--sky);
+      color: #fff;
+      box-shadow: 0 6px 24px rgba(46, 127, 253, 0.45);
+    }
+    .btn-primary:hover {
+      background: #4a91ff;
+      color: #fff;
+    }
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+    }
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.22);
+      color: #fff;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--navy);
+      border: 1px solid var(--line);
+    }
+    .btn-secondary:hover {
+      border-color: var(--sky);
+      color: var(--sky);
+      background: rgba(46, 127, 253, 0.06);
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(1.1rem); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-media img { animation: none; transform: scale(1.06); }
+      .brand, .hero h1, .hero-lede, .cta-row {
+        animation: none;
+        opacity: 1;
+      }
+    }
+
+    /* —— Sections —— */
+    .section {
+      padding: clamp(3.5rem, 8vw, 6rem) 1.5rem;
+    }
+    .section-inner {
+      max-width: 42rem;
+      margin: 0 auto;
+    }
+    .section h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.55rem, 3.5vw, 2rem);
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      margin: 0 0 0.75rem;
+      color: var(--navy);
+    }
+    .section p {
+      margin: 0;
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 36ch;
+    }
+
+    .section-walk {
+      background:
+        radial-gradient(900px 420px at 90% 0%, rgba(46, 127, 253, 0.1), transparent 60%),
+        var(--snow);
+    }
+    .section-talk {
+      background: var(--navy);
+      color: #fff;
+    }
+    .section-talk h2 { color: #fff; }
+    .section-talk p { color: rgba(255, 255, 255, 0.78); }
+    .section-review {
+      background:
+        linear-gradient(165deg, var(--fog) 0%, var(--snow) 55%);
+    }
+
+    .photo-credit {
+      margin: 0;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .photo-credit a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .photo-credit a:hover { color: var(--sky); }
+
+    footer {
+      padding: 2rem 1.5rem 3rem;
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+    .footer-inner {
+      max-width: 42rem;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.35rem;
+    }
+    .footer-links a {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .footer-links a:hover { color: var(--sky); }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-media" aria-hidden="true">
+      <img
+        src="assets/hero-nuuksio.jpg"
+        srcset="assets/hero-nuuksio-sm.jpg 800w, assets/hero-nuuksio.jpg 2400w"
+        sizes="100vw"
+        alt=""
+        width="2400"
+        height="1798"
+        fetchpriority="high"
+      />
+    </div>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <nav class="hero-nav" aria-label="Site">
+      <a href="learn-finnish/">Privacy</a>
+      <a href="mailto:ammar.ofc@gmail.com">Support</a>
+    </nav>
+    <div class="hero-content">
+      <div class="brand">
+        <div class="brand-mark">
+          <img src="assets/lf-mark.png" alt="" width="512" height="512" />
+        </div>
+        <p class="brand-name">Learn Finnish</p>
+      </div>
+      <h1>Finnish for adults who want to speak</h1>
+      <p class="hero-lede">
+        Walk a clear path through the language, review what sticks, and practice conversation when you’re ready.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#get-app">Get the app</a>
+        <a class="btn btn-ghost" href="#how">How it works</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section-walk" id="how">
+      <div class="section-inner">
+        <h2>Walk the map</h2>
+        <p>
+          Progress through grammar and vocabulary in a deliberate order — not random drills. Each stop builds on what you already know.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-talk">
+      <div class="section-inner">
+        <h2>Talk when you’re ready</h2>
+        <p>
+          Optional conversation practice with speech, so you rehearse real exchanges — not only flashcards.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-review" id="get-app">
+      <div class="section-inner">
+        <h2>Made for iPhone</h2>
+        <p>
+          Learn Finnish is built for adult self-learners on iOS. Coming soon on the App Store — questions welcome anytime.
+        </p>
+        <div class="cta-row cta-row-static">
+          <a class="btn btn-primary" href="mailto:ammar.ofc@gmail.com?subject=Learn%20Finnish%20App%20Store">Ask about early access</a>
+          <a class="btn btn-secondary" href="learn-finnish/">Privacy &amp; terms</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© Learn Finnish</span>
+      <div class="footer-links">
+        <a href="learn-finnish/">Privacy</a>
+        <a href="learn-finnish/api.json">App config</a>
+        <a href="mailto:ammar.ofc@gmail.com">Support</a>
+      </div>
+      <p class="photo-credit">
+        Hero photo: Nuuksio —
+        <a href="https://unsplash.com/photos/r0aq9pYIadI" rel="noopener noreferrer">Narahari K R / Unsplash</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
