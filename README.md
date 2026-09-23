@@ -13,4 +13,5 @@ GitHub Pages source: **`main` branch → `/docs` folder**.
 
 - Landing: https://ammarisme.github.io/app-docs/
 - Privacy / terms: https://ammarisme.github.io/app-docs/learn-finnish/
+- Support: https://ammarisme.github.io/app-docs/learn-finnish/support.html
 - Bootstrap config: https://ammarisme.github.io/app-docs/learn-finnish/api.json
