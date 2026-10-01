@@ -8,7 +8,7 @@ GitHub Pages source: **`main` branch → `/docs` folder**.
 
 | Path | Purpose |
 |------|---------|
-| [`docs/index.html`](docs/index.html) | **Learn Finnish** marketing landing page |
+| [`docs/index.html`](docs/index.html) | **Finnish Pro** landing page (App Store: https://apps.apple.com/us/app/finnish-pro/id6815337238) |
 | [`docs/learn-finnish/`](docs/learn-finnish/) | Privacy, terms, support, remote config |
 
 - Landing: https://ammarisme.github.io/app-docs/

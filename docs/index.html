@@ -2,405 +2,420 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Learn Finnish — Finnish for adults who want to speak</title>
-  <meta name="description" content="Learn Finnish is an iOS app for adult self-learners: structured walks through grammar, spaced review, and optional AI conversation practice." />
-  <meta property="og:title" content="Learn Finnish" />
-  <meta property="og:description" content="Finnish for adults who want to speak — walk the map, review what sticks, talk when you’re ready." />
-  <meta property="og:image" content="https://ammarisme.github.io/app-docs/assets/lf-mark.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Finnish Pro — Learn Finnish on iPhone</title>
+  <meta name="description" content="Finnish Pro is an iPhone app for adult learners: 3,000 everyday words with pictures and audio, bite-sized grammar lessons, and conversation practice with friendly AI partners." />
+  <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0d1424" media="(prefers-color-scheme: dark)" />
+  <meta name="apple-itunes-app" content="app-id=6815337238" />
+  <meta property="og:title" content="Finnish Pro" />
+  <meta property="og:description" content="Learn the Finnish you actually use — words, grammar and real conversation practice. Free on the App Store." />
+  <meta property="og:image" content="https://ammarisme.github.io/app-docs/assets/finnish-pro-icon-512.jpg" />
+  <meta property="og:url" content="https://ammarisme.github.io/app-docs/" />
   <meta property="og:type" content="website" />
-  <link rel="icon" href="assets/lf-mark.png" type="image/png" />
+  <link rel="icon" href="assets/finnish-pro-icon-256.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --navy: #0a2f6b;
-      --cobalt: #0045a0;
-      --sky: #2e7ffd;
-      --ink: #0c1220;
-      --muted: #4a5568;
-      --fog: #e8eef8;
-      --snow: #f7f9fc;
-      --line: rgba(10, 47, 107, 0.12);
-      --radius: 14px;
-      --font-display: "Syne", ui-sans-serif, sans-serif;
-      --font-body: "Figtree", ui-sans-serif, sans-serif;
+      --bg: #f6f5f1;
+      --surface: #ffffff;
+      --ink: #0f1a2e;
+      --muted: #5b6475;
+      --line: rgba(15, 26, 46, 0.09);
+      --brand: #0a56c9;
+      --brand-deep: #0b2f7a;
+      --brand-soft: #e6effd;
+      --accent: #3f6e60;
+      --shadow: 0 1px 2px rgba(15, 26, 46, 0.05), 0 12px 32px rgba(15, 26, 46, 0.08);
+      --radius: 20px;
+      --wrap: 68rem;
+      --font: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0d1424;
+        --surface: #151e33;
+        --ink: #eef2f9;
+        --muted: #9aa5ba;
+        --line: rgba(255, 255, 255, 0.08);
+        --brand: #5b9bff;
+        --brand-deep: #a9c8ff;
+        --brand-soft: rgba(91, 155, 255, 0.12);
+        --accent: #7fb5a3;
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.35);
+        color-scheme: dark;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #0d1424;
+      --surface: #151e33;
+      --ink: #eef2f9;
+      --muted: #9aa5ba;
+      --line: rgba(255, 255, 255, 0.08);
+      --brand: #5b9bff;
+      --brand-deep: #a9c8ff;
+      --brand-soft: rgba(91, 155, 255, 0.12);
+      --accent: #7fb5a3;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.35);
+      color-scheme: dark;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
     body {
       margin: 0;
-      font-family: var(--font-body);
+      font-family: var(--font);
       color: var(--ink);
-      background: var(--snow);
-      line-height: 1.5;
+      background: var(--bg);
+      line-height: 1.55;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
     img { max-width: 100%; display: block; }
-    a { color: var(--cobalt); }
-    a:hover { color: var(--sky); }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    a:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; border-radius: 6px; }
 
-    /* —— Hero —— */
-    .hero {
-      position: relative;
-      min-height: 100svh;
-      min-height: 100vh;
-      display: grid;
-      align-items: end;
-      overflow: hidden;
-      color: #fff;
-    }
-    .hero-media {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-    .hero-media img {
+    .wrap {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 40%;
-      transform: scale(1.08);
-      animation: kenburns 28s ease-in-out infinite alternate;
+      max-width: var(--wrap);
+      margin: 0 auto;
+      padding-left: max(16px, env(safe-area-inset-left));
+      padding-right: max(16px, env(safe-area-inset-right));
     }
-    @keyframes kenburns {
-      from { transform: scale(1.08) translate(0, 0); }
-      to { transform: scale(1.16) translate(-1.5%, -1%); }
-    }
-    .hero-shade {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background:
-        linear-gradient(180deg, rgba(4, 18, 42, 0.35) 0%, rgba(4, 18, 42, 0.15) 38%, rgba(4, 18, 42, 0.72) 78%, rgba(4, 18, 42, 0.92) 100%),
-        linear-gradient(90deg, rgba(4, 18, 42, 0.45) 0%, transparent 55%);
-      pointer-events: none;
-    }
-    .hero-nav {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 3;
-      display: flex;
-      justify-content: flex-end;
-      gap: 1.25rem;
-      padding: 1.25rem 1.5rem;
-      font-size: 0.92rem;
-      font-weight: 500;
-    }
-    .hero-nav a {
-      color: rgba(255, 255, 255, 0.88);
-      text-decoration: none;
-      letter-spacing: 0.01em;
-    }
-    .hero-nav a:hover { color: #fff; }
+    @media (min-width: 640px) { .wrap { padding-left: 32px; padding-right: 32px; } }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      width: min(40rem, 100%);
-      padding: 2rem 1.5rem 3.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.85rem;
-    }
-    @media (min-width: 768px) {
-      .hero-content {
-        padding: 3rem 4rem 4.5rem;
-        width: min(42rem, 100%);
-      }
-    }
+    /* Top bar */
+    .topbar { padding-top: max(14px, env(safe-area-inset-top)); padding-bottom: 14px; }
+    .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .logo { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 700; letter-spacing: -0.01em; }
+    .logo:hover { text-decoration: none; }
+    .logo img { width: 34px; height: 34px; border-radius: 9px; box-shadow: 0 1px 4px rgba(15, 26, 46, 0.15); }
+    .topnav { display: flex; gap: 1.25rem; font-size: 0.93rem; font-weight: 500; }
+    .topnav a { color: var(--muted); }
+    .topnav a:hover { color: var(--ink); text-decoration: none; }
+    @media (max-width: 420px) { .topnav .hide-sm { display: none; } }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      margin: 0 0 0.35rem;
-      opacity: 0;
-      animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+    /* Hero */
+    .hero { padding: 2.5rem 0 3.5rem; }
+    .hero .wrap { display: grid; gap: 2.75rem; align-items: center; }
+    @media (min-width: 880px) {
+      .hero { padding: 4rem 0 5rem; }
+      .hero .wrap { grid-template-columns: 1.1fr 0.9fr; gap: 3rem; }
     }
-    .brand-mark {
-      width: 3.5rem;
-      height: 3.5rem;
-      border-radius: 0.85rem;
-      background: #fff;
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
-      overflow: hidden;
-      flex-shrink: 0;
+    .hero-copy { text-align: center; }
+    @media (min-width: 880px) { .hero-copy { text-align: left; } }
+    .app-icon {
+      width: 88px; height: 88px; border-radius: 22px;
+      margin: 0 auto 1.4rem;
+      box-shadow: var(--shadow);
     }
-    .brand-mark img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    @media (min-width: 880px) { .app-icon { margin-left: 0; } }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--brand);
+      background: var(--brand-soft);
+      padding: 0.3rem 0.7rem; border-radius: 999px;
+      margin-bottom: 1rem;
     }
-    .brand-name {
-      font-family: var(--font-display);
+    h1 {
+      font-size: clamp(2.1rem, 7vw, 3.5rem);
+      line-height: 1.07;
+      letter-spacing: -0.035em;
       font-weight: 800;
-      font-size: clamp(1.85rem, 5vw, 2.65rem);
-      letter-spacing: -0.03em;
-      line-height: 1.05;
-      margin: 0;
-      text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+      margin: 0 0 1rem;
     }
+    h1 .hl { color: var(--brand); }
+    .lede {
+      font-size: clamp(1.05rem, 2.6vw, 1.2rem);
+      color: var(--muted);
+      margin: 0 auto 1.75rem;
+      max-width: 34rem;
+    }
+    @media (min-width: 880px) { .lede { margin-left: 0; } }
+    .cta { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+    @media (min-width: 880px) { .cta { align-items: flex-start; } }
+    .store-btn {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: #000; color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 14px;
+      padding: 0.6rem 1.25rem 0.6rem 1rem;
+      min-height: 56px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    }
+    .store-btn:hover { text-decoration: none; transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22); }
+    .store-btn svg { width: 26px; height: 30px; flex: none; }
+    .store-btn span { display: flex; flex-direction: column; font-size: 1.3rem; font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; text-align: left; }
+    .store-btn small { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.01em; opacity: 0.9; }
+    .store-btn-light { background: #fff; color: #000; border-color: transparent; }
+    .cta-note { font-size: 0.88rem; color: var(--muted); margin: 0; }
 
-    .hero h1 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(1.35rem, 3.4vw, 1.85rem);
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin: 0;
-      max-width: 22ch;
-      opacity: 0;
-      animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
-    }
-    .hero-lede {
-      margin: 0;
-      font-size: clamp(1rem, 2.2vw, 1.125rem);
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.88);
-      max-width: 34ch;
-      opacity: 0;
-      animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 0.5rem;
-      opacity: 0;
-      animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.65s forwards;
-    }
-    .cta-row-static {
-      margin-top: 1.5rem;
-      opacity: 1;
-      animation: none;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.45rem;
-      padding: 0.85rem 1.35rem;
-      border-radius: 999px;
-      font-family: var(--font-body);
-      font-size: 0.98rem;
-      font-weight: 600;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-    }
-    .btn:hover { transform: translateY(-1px); }
-    .btn:active { transform: translateY(0); }
-    .btn-primary {
-      background: var(--sky);
-      color: #fff;
-      box-shadow: 0 6px 24px rgba(46, 127, 253, 0.45);
-    }
-    .btn-primary:hover {
-      background: #4a91ff;
-      color: #fff;
-    }
-    .btn-ghost {
-      background: rgba(255, 255, 255, 0.12);
-      color: #fff;
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.28);
-    }
-    .btn-ghost:hover {
-      background: rgba(255, 255, 255, 0.22);
-      color: #fff;
-    }
-    .btn-secondary {
-      background: transparent;
-      color: var(--navy);
-      border: 1px solid var(--line);
-    }
-    .btn-secondary:hover {
-      border-color: var(--sky);
-      color: var(--sky);
-      background: rgba(46, 127, 253, 0.06);
-    }
-
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(1.1rem); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .hero-media img { animation: none; transform: scale(1.06); }
-      .brand, .hero h1, .hero-lede, .cta-row {
-        animation: none;
-        opacity: 1;
-      }
-    }
-
-    /* —— Sections —— */
-    .section {
-      padding: clamp(3.5rem, 8vw, 6rem) 1.5rem;
-    }
-    .section-inner {
-      max-width: 42rem;
+    /* Phone mockup */
+    .phone {
+      position: relative;
+      width: min(280px, 72vw);
       margin: 0 auto;
+      aspect-ratio: 1179 / 2556;
+      border-radius: 44px;
+      padding: 10px;
+      background: #0b0f19;
+      box-shadow: 0 30px 60px -20px rgba(11, 47, 122, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
     }
-    .section h2 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(1.55rem, 3.5vw, 2rem);
-      letter-spacing: -0.025em;
+    .phone img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 35px;
+    }
+    .hero-visual { position: relative; }
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 8% 4% 4%;
+      background: radial-gradient(closest-side, var(--brand-soft), transparent);
+      filter: blur(10px);
+      z-index: -1;
+    }
+
+    /* Sections */
+    section { padding: 3.5rem 0; }
+    @media (min-width: 880px) { section { padding: 5rem 0; } }
+    .section-head { text-align: center; max-width: 38rem; margin: 0 auto 2.5rem; }
+    h2 {
+      font-size: clamp(1.6rem, 4.5vw, 2.3rem);
       line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-weight: 800;
       margin: 0 0 0.75rem;
-      color: var(--navy);
     }
-    .section p {
-      margin: 0;
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 36ch;
+    .section-head p { color: var(--muted); margin: 0; font-size: 1.05rem; }
+
+    /* Features */
+    .features { display: grid; gap: 1rem; }
+    @media (min-width: 720px) { .features { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
+    .feature {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .feature-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: grid; place-items: center;
+      background: var(--brand-soft); color: var(--brand);
+      margin-bottom: 1rem;
+    }
+    .feature-icon svg { width: 22px; height: 22px; }
+    .feature h3 { font-size: 1.15rem; letter-spacing: -0.015em; margin: 0 0 0.4rem; }
+    .feature p { margin: 0 0 0.9rem; color: var(--muted); font-size: 0.98rem; }
+    .feature ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.4rem; font-size: 0.93rem; }
+    .feature li { display: flex; gap: 0.55rem; align-items: baseline; }
+    .feature li::before {
+      content: ""; flex: none;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
+      transform: translateY(-2px);
     }
 
-    .section-walk {
-      background:
-        radial-gradient(900px 420px at 90% 0%, rgba(46, 127, 253, 0.1), transparent 60%),
-        var(--snow);
+    /* Screenshots */
+    .screens-band { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .screens {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 0.5rem 16px 1.25rem;
+      margin: 0 -16px;
+      scrollbar-width: thin;
     }
-    .section-talk {
-      background: var(--navy);
+    @media (min-width: 640px) { .screens { margin: 0 -32px; padding-left: 32px; padding-right: 32px; } }
+    @media (min-width: 1100px) { .screens { justify-content: center; overflow-x: visible; } }
+    .shot { flex: none; width: min(220px, 62vw); scroll-snap-align: center; margin: 0; }
+    .shot img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1179 / 2556;
+      object-fit: cover;
+      border-radius: 26px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: var(--bg);
+    }
+    .shot figcaption { text-align: center; font-size: 0.88rem; color: var(--muted); margin-top: 0.75rem; font-weight: 500; }
+
+    /* Final CTA */
+    .final {
+      text-align: center;
+      background: linear-gradient(160deg, var(--brand-deep) 0%, #0a56c9 100%);
       color: #fff;
+      border-radius: 28px;
+      padding: 3rem 1.5rem;
     }
-    .section-talk h2 { color: #fff; }
-    .section-talk p { color: rgba(255, 255, 255, 0.78); }
-    .section-review {
-      background:
-        linear-gradient(165deg, var(--fog) 0%, var(--snow) 55%);
+    :root[data-theme="dark"] .final { background: linear-gradient(160deg, #0b2f7a 0%, #0a56c9 100%); }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) .final { background: linear-gradient(160deg, #0b2f7a 0%, #0a56c9 100%); }
     }
+    .final img.app-icon { margin: 0 auto 1.25rem; width: 72px; height: 72px; border-radius: 18px; }
+    .final h2 { color: #fff; }
+    .final p { color: rgba(255, 255, 255, 0.82); margin: 0 auto 1.75rem; max-width: 30rem; }
+    .final .cta { align-items: center; }
 
-    .photo-credit {
-      margin: 0;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-    .photo-credit a {
-      color: var(--muted);
-      text-decoration: none;
-    }
-    .photo-credit a:hover { color: var(--sky); }
-
-    footer {
-      padding: 2rem 1.5rem 3rem;
-      border-top: 1px solid var(--line);
-      background: #fff;
-    }
-    .footer-inner {
-      max-width: 42rem;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem 2rem;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem 1.35rem;
-    }
-    .footer-links a {
-      color: var(--navy);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .footer-links a:hover { color: var(--sky); }
+    /* Footer */
+    footer { padding: 2.5rem 0 max(2.5rem, env(safe-area-inset-bottom)); font-size: 0.9rem; color: var(--muted); }
+    footer .wrap { display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; justify-content: space-between; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+    .footer-links a { color: var(--ink); font-weight: 500; }
   </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-media" aria-hidden="true">
-      <img
-        src="assets/hero-nuuksio.jpg"
-        srcset="assets/hero-nuuksio-sm.jpg 800w, assets/hero-nuuksio.jpg 2400w"
-        sizes="100vw"
-        alt=""
-        width="2400"
-        height="1798"
-        fetchpriority="high"
-      />
-    </div>
-    <div class="hero-shade" aria-hidden="true"></div>
-    <nav class="hero-nav" aria-label="Site">
-      <a href="learn-finnish/">Privacy</a>
-      <a href="mailto:ammar.ofc@gmail.com">Support</a>
-    </nav>
-    <div class="hero-content">
-      <div class="brand">
-        <div class="brand-mark">
-          <img src="assets/lf-mark.png" alt="" width="512" height="512" />
-        </div>
-        <p class="brand-name">Learn Finnish</p>
-      </div>
-      <h1>Finnish for adults who want to speak</h1>
-      <p class="hero-lede">
-        Walk a clear path through the language, review what sticks, and practice conversation when you’re ready.
-      </p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#get-app">Get the app</a>
-        <a class="btn btn-ghost" href="#how">How it works</a>
-      </div>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="logo" href="./" aria-label="Finnish Pro home">
+        <img src="assets/finnish-pro-icon-256.png" alt="" width="34" height="34" />
+        <span>Finnish Pro</span>
+      </a>
+      <nav class="topnav" aria-label="Site">
+        <a class="hide-sm" href="#features">Features</a>
+        <a href="learn-finnish/support.html">Support</a>
+        <a href="learn-finnish/">Privacy</a>
+      </nav>
     </div>
   </header>
 
   <main>
-    <section class="section section-walk" id="how">
-      <div class="section-inner">
-        <h2>Walk the map</h2>
-        <p>
-          Progress through grammar and vocabulary in a deliberate order — not random drills. Each stop builds on what you already know.
-        </p>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero-copy">
+          <img class="app-icon" src="assets/finnish-pro-icon-512.jpg" alt="Finnish Pro app icon" width="88" height="88" />
+          <span class="eyebrow">For iPhone</span>
+          <h1 id="hero-title">Learn the Finnish <span class="hl">you’ll actually use.</span></h1>
+          <p class="lede">
+            Everyday words with pictures and audio, grammar in bite-sized steps, and relaxed conversation practice with friendly AI partners.
+          </p>
+          <div class="cta">
+            <a class="store-btn" href="https://apps.apple.com/us/app/finnish-pro/id6815337238" rel="noopener" aria-label="Download Finnish Pro on the App Store">
+              <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+              <span><small>Download on the</small>App Store</span>
+            </a>
+            <p class="cta-note">Made for adult self-learners</p>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="phone">
+            <img src="assets/screens/03-word-card-isoaiti.jpg" alt="Word card for isoäiti (grandmother), showing the compound iso + äiti with a photo" width="1179" height="2556" fetchpriority="high" />
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section section-talk">
-      <div class="section-inner">
-        <h2>Talk when you’re ready</h2>
-        <p>
-          Optional conversation practice with speech, so you rehearse real exchanges — not only flashcards.
-        </p>
+    <section id="features" aria-labelledby="features-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="features-title">Three ways to practice</h2>
+          <p>Build vocabulary, understand why Finnish works the way it does, then put it to use.</p>
+        </div>
+        <div class="features">
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <h3>Words</h3>
+            <p>3,000 everyday words grouped by real-life topics, from family to food to housing.</p>
+            <ul>
+              <li>A picture and audio for every word</li>
+              <li>Compounds broken into their parts</li>
+              <li>Discover new words or revisit ones you’ve met</li>
+            </ul>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg>
+            </div>
+            <h3>Grammar</h3>
+            <p>A clear path through the language, one small idea at a time.</p>
+            <ul>
+              <li>Learn, practice, then test each step</li>
+              <li>Short explanations with real examples</li>
+              <li>Tips that flag the common mistakes</li>
+            </ul>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
+            </div>
+            <h3>Talk</h3>
+            <p>Practice real conversations without the pressure of a real one.</p>
+            <ul>
+              <li>Chat with a friend, tutor, barista, waiter and more</li>
+              <li>Easy, medium or hard difficulty</li>
+              <li>Speak or type your replies</li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section section-review" id="get-app">
-      <div class="section-inner">
-        <h2>Made for iPhone</h2>
-        <p>
-          Learn Finnish is built for adult self-learners on iOS. Coming soon on the App Store — questions welcome anytime.
-        </p>
-        <div class="cta-row cta-row-static">
-          <a class="btn btn-primary" href="mailto:ammar.ofc@gmail.com?subject=Learn%20Finnish%20App%20Store">Ask about early access</a>
-          <a class="btn btn-secondary" href="learn-finnish/">Privacy &amp; terms</a>
+    <section class="screens-band" aria-labelledby="screens-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="screens-title">A look inside</h2>
+          <p>Calm, focused screens with nothing in the way of learning.</p>
+        </div>
+        <div class="screens" tabindex="0" aria-label="App screenshots, scroll horizontally">
+          <figure class="shot">
+            <img src="assets/screens/02-vocabulary-list.jpg" alt="Vocabulary list grouped by topic with progress" loading="lazy" width="1179" height="2556" />
+            <figcaption>3,000 words by topic</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/screens/07-word-card-compound-family.jpg" alt="Word card for rivitalo with related compounds of talo" loading="lazy" width="1179" height="2556" />
+            <figcaption>Explore word families</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/screens/05-grammar-learn.jpg" alt="Grammar lesson on invariant suffixes" loading="lazy" width="1179" height="2556" />
+            <figcaption>Bite-sized grammar</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/screens/04-talk-picker.jpg" alt="Talk screen to pick a conversation partner and difficulty" loading="lazy" width="1179" height="2556" />
+            <figcaption>Pick who to talk to</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="final-title">
+      <div class="wrap">
+        <div class="final">
+          <img class="app-icon" src="assets/finnish-pro-icon-512.jpg" alt="" width="72" height="72" />
+          <h2 id="final-title">Start speaking Finnish today</h2>
+          <p>Download Finnish Pro and learn your first words in under a minute.</p>
+          <div class="cta">
+            <a class="store-btn store-btn-light" href="https://apps.apple.com/us/app/finnish-pro/id6815337238" rel="noopener" aria-label="Download Finnish Pro on the App Store">
+              <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+              <span><small>Download on the</small>App Store</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="footer-inner">
-      <span>© Learn Finnish</span>
-      <div class="footer-links">
-        <a href="learn-finnish/">Privacy</a>
-        <a href="learn-finnish/api.json">App config</a>
-        <a href="mailto:ammar.ofc@gmail.com">Support</a>
-      </div>
-      <p class="photo-credit">
-        Hero photo: Nuuksio —
-        <a href="https://unsplash.com/photos/r0aq9pYIadI" rel="noopener noreferrer">Narahari K R / Unsplash</a>
-      </p>
+    <div class="wrap">
+      <span>© 2026 Finnish Pro</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="https://apps.apple.com/us/app/finnish-pro/id6815337238" rel="noopener">App Store</a>
+        <a href="learn-finnish/support.html">Support</a>
+        <a href="learn-finnish/">Privacy &amp; Terms</a>
+        <a href="mailto:ammar.ofc@gmail.com">Contact</a>
+      </nav>
     </div>
   </footer>
 </body>
