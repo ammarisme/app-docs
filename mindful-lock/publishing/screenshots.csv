@@ -1,0 +1,7 @@
+order,filename,headline,caption,capture,shipping_requirement
+1,01-small-habit.png,One small habit. A steadier day.,Let your apps wait a moment.,Welcome screen before onboarding,Release UI without test controls
+2,02-your-apps.png,Your time. Your choice.,Choose the apps or categories to pause.,App selection screen with consenting nonessential selections,Real system picker and labels; no fixture app identities
+3,03-your-rituals.png,Make room for something good.,Choose the activities that ground you.,Activity chooser with meditation reading water and reflection visible,Actual available choices and real durations
+4,04-meditation.png,A quieter five minutes.,Breathe with gentle stream audio.,Meditation screen showing 5-minute selection and genuine timer,No accelerated countdown or simulated completion
+5,05-your-schedule.png,A little space in your day.,Choose a time and the days that suit you.,Schedule editor with selected weekdays and a valid future time,Do not imply exact callback timing or automatic unlocking
+6,06-unlock.png,Back to your day. On your terms.,Finish your activities. Then unlock.,All required activities complete and Unlock apps visible,Do not show an early unlock or claim tamper-proof blocking
