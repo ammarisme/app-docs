@@ -2,7 +2,7 @@
 
 ## Beta description
 
-Mindful Lock creates a little space before you return to distracting apps. Choose apps to pause, complete a grounding activity, and explicitly unlock. Try immediate pauses, recurring schedules, meditation with gentle stream audio, reading, reflection, water breaks, and custom activities. Settings and progress stay on your device; no account is required.
+HabitFlip creates a little space before you return to distracting apps. Choose apps to pause, complete a grounding activity, and explicitly unlock. Try immediate pauses, recurring schedules, meditation with gentle stream audio, reading, reflection, water breaks, and custom activities. Settings and progress stay on your device; no account is required.
 
 ## What to test
 

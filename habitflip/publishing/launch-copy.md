@@ -8,13 +8,13 @@ One small habit. A steadier day. Pause your apps, make room for something ground
 
 ## Short announcement
 
-Meet Mindful Lock: a little space before your next scroll. Choose apps to pause, complete a meditation, reading break, reflection, or custom ritual, then tap Unlock apps. No account, ads, or analytics SDKs. Your habits stay on your device.
+Meet HabitFlip: a little space before your next scroll. Choose apps to pause, complete a meditation, reading break, reflection, or custom ritual, then tap Unlock apps. No account, ads, or analytics SDKs. Your habits stay on your device.
 
 ## Longer announcement
 
 Let your apps wait a moment.
 
-Mindful Lock helps you make time for something grounding before returning to distracting apps. Start a pause now or schedule it for selected days. Meditate with gentle stream audio, read a few pages, write a reflection, take a water break, or build your own timer, confirmation, or checklist.
+HabitFlip helps you make time for something grounding before returning to distracting apps. Start a pause now or schedule it for selected days. Meditate with gentle stream audio, read a few pages, write a reflection, take a water break, or build your own timer, confirmation, or checklist.
 
 Complete the activities you chose, then explicitly unlock. No account to create and no app-operated server. This is voluntary self-control, with you still in charge of Screen Time access.
 
@@ -26,7 +26,7 @@ See `app-store/en-US/release_notes.txt`. The first release may not require a Wha
 
 ## Support response starter
 
-Thanks for reporting this Mindful Lock issue. Please send your app build, device model, iOS version, and the steps that led to it. For a scheduled pause, include the selected days, local time, and whether Screen Time access was still granted. Please leave out private reflections, medication details, and sensitive screenshots.
+Thanks for reporting this HabitFlip issue. Please send your app build, device model, iOS version, and the steps that led to it. For a scheduled pause, include the selected days, local time, and whether Screen Time access was still granted. Please leave out private reflections, medication details, and sensitive screenshots.
 
 ## Post-approval website update
 

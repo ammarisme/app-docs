@@ -1,6 +1,6 @@
-# Mindful Lock publishing package
+# HabitFlip publishing package
 
-Prepared 10 October 2026 from the adjacent Mindful Lock source checkout and the app-docs repository's existing docs. This package is **prepared, not published or App Store submission-ready**. All public-facing files live in `mindful-lock/public/`; internal preparation lives here, beside the public site within the app’s own directory.
+Prepared 10 October 2026 from the adjacent HabitFlip source checkout and the app-docs repository's existing docs. This package is **prepared, not published or App Store submission-ready**. All public-facing files live in `habitflip/public/`; internal preparation lives here, beside the public site within the app’s own directory.
 
 ## Contents
 
@@ -18,24 +18,24 @@ Prepared 10 October 2026 from the adjacent Mindful Lock source checkout and the 
 
 | App Store field | URL |
 | --- | --- |
-| Marketing | https://ammarisme.github.io/app-docs/mindful-lock/ |
-| Support | https://ammarisme.github.io/app-docs/mindful-lock/support.html |
-| Privacy | https://ammarisme.github.io/app-docs/mindful-lock/privacy.html |
-| Terms summary | https://ammarisme.github.io/app-docs/mindful-lock/terms.html |
-| Audio credits | https://ammarisme.github.io/app-docs/mindful-lock/credits.html |
+| Marketing | https://ammarisme.github.io/app-docs/habitflip/ |
+| Support | https://ammarisme.github.io/app-docs/habitflip/support.html |
+| Privacy | https://ammarisme.github.io/app-docs/habitflip/privacy.html |
+| Terms summary | https://ammarisme.github.io/app-docs/habitflip/terms.html |
+| Audio credits | https://ammarisme.github.io/app-docs/habitflip/credits.html |
 
-These are proposed URLs, not evidence of live deployment. The existing GitHub Pages configuration publishes only `/docs`, which belongs to Finnish Pro. Pushing this directory alone will not publish Mindful Lock. Configure a deployment that maps only `mindful-lock/public/` to the desired public route, preserving the existing app. Update canonical URLs and store metadata if a different host or route is chosen. Never include `mindful-lock/publishing/` in the deployed site.
+The public route is `/app-docs/habitflip/`. Prepare it with `python3 habitflip/publishing/prepare_site.py`, which copies only `habitflip/public/` into `docs/habitflip/` for the existing main → /docs Pages deployment. Publishing notes are excluded; existing Finnish Pro hosting is preserved.
 
 ## Preview and validate
 
 From the app-docs root:
 
 ```sh
-python3 mindful-lock/publishing/validate.py
-python3 -m http.server 8874 --directory mindful-lock/public --bind 127.0.0.1
+python3 habitflip/publishing/validate.py
+python3 -m http.server 8874 --directory habitflip/public --bind 127.0.0.1
 ```
 
-Open `http://127.0.0.1:8874/`. The existing `/docs` directory belongs to Finnish Pro and is not used by Mindful Lock.
+Open `http://127.0.0.1:8874/`. The existing `/docs` directory belongs to Finnish Pro and is not used by HabitFlip.
 
 ## Decisions still needed
 

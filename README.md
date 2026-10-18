@@ -18,11 +18,11 @@ GitHub Pages source: **`main` branch → `/docs` folder**.
 
 ## App directories
 
-Each app owns its own directory. The existing `docs/` directory belongs to Finnish Pro and remains its GitHub Pages source.
+Each app owns its own directory. The existing Finnish Pro site remains in `docs/`. HabitFlip is published in its own `docs/habitflip/` subdirectory.
 
 | Directory | App | Contents |
 | --- | --- | --- |
 | `docs/` | Finnish Pro | Existing public site and documentation |
-| [`mindful-lock/`](mindful-lock/README.md) | Mindful Lock | Public pages, assets, and publishing materials |
+| [`habitflip/`](habitflip/README.md) | HabitFlip | Public pages, assets, and publishing materials |
 
-Mindful Lock’s public files live in `mindful-lock/public/`; submission materials live in `mindful-lock/publishing/`. The current `/docs` Pages configuration does not publish Mindful Lock automatically. See its README for preview and deployment instructions.
+HabitFlip’s public files live in `habitflip/public/`; submission materials live in `habitflip/publishing/`. Run `python3 habitflip/publishing/prepare_site.py` to copy only HabitFlip public assets into `docs/habitflip/`, then commit and push to `main`. Publishing notes are excluded.

@@ -2,7 +2,7 @@
 
 Use as supporting product context if Apple's current request workflow asks for it. This is not an entitlement approval or a submitted request.
 
-**App:** Mindful Lock, native SwiftUI, iOS/iPadOS 17+.
+**App:** HabitFlip, native SwiftUI, iOS/iPadOS 17+.
 
 **Purpose:** Individual, voluntary app pauses that make room for a user-chosen activity before returning to distracting apps. The user explicitly grants individual Screen Time authorization and chooses apps/categories in Apple's picker. No child accounts, monitoring dashboard, remote commands, VPN, or MDM are used.
 

@@ -1,18 +1,18 @@
-# Mindful Lock release checklist
+# HabitFlip release checklist
 
 Prepared 10 October 2026. Checked items reflect artifact preparation only. Unchecked items are real release gates or account-holder decisions, not verified completion.
 
 ## Prepared here
 
 - [x] Clone app-docs locally; preserve the existing Finnish Pro landing and docs.
-- [x] Add responsive landing, support, privacy, terms-summary, and audio-credit pages under `mindful-lock/public/`.
+- [x] Add responsive landing, support, privacy, terms-summary, and audio-credit pages under `habitflip/public/`.
 - [x] Reuse the existing 1024px icon and produce web sizes.
 - [x] Draft App Store English metadata, reviewer walkthrough, entitlement context, beta copy, and launch copy.
 - [x] Provide screenshot storyboard, capture requirements, source references, and static package validation.
 
 ## Owner/account decisions
 
-- [ ] Confirm support inbox `ammar.ofc@gmail.com` is appropriate for Mindful Lock and monitored.
+- [ ] Confirm support inbox `ammar.ofc@gmail.com` is appropriate for HabitFlip and monitored.
 - [ ] Confirm full seller/legal/copyright name; draft uses “Ammar” internally and the app name in the website footer.
 - [ ] Choose pricing, territories, availability date, and release mode; no payment implementation exists in the inspected app.
 - [ ] Supply review contact name, email, and phone in App Store Connect.
@@ -45,8 +45,8 @@ The adjacent README explicitly says the revised suite was compiled but not execu
 ## Publish docs and submit
 
 - [ ] Review privacy/terms against the final build and actual seller/support practices.
-- [ ] Run `python3 mindful-lock/publishing/validate.py`; inspect responsive pages in a browser.
-- [ ] Configure deployment for `mindful-lock/public/` without placing it inside the existing app’s `/docs`. Preserve Finnish Pro hosting, exclude `mindful-lock/publishing/`, and update proposed URLs if the final host or route differs. Commit, push, and verify the deployment.
+- [ ] Run `python3 habitflip/publishing/validate.py`; inspect responsive pages in a browser.
+- [ ] Configure deployment for `habitflip/public/` without placing it inside the existing app’s `/docs`. Preserve Finnish Pro hosting, exclude `habitflip/publishing/`, and update proposed URLs if the final host or route differs. Commit, push, and verify the deployment.
 - [ ] Open all intended public URLs unauthenticated; confirm privacy and support links in-app and App Store metadata resolve.
 - [ ] Confirm App Privacy answers against final archive and SDK inventory; current recommendation is Data Not Collected conditional on unchanged behavior.
 - [ ] Enter English listing copy, pricing, screenshots, copyright, legal/account information, and actual review contact.

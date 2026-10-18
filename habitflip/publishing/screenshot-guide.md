@@ -17,7 +17,7 @@ Use the app's Stone palette: paper `#f2eadd`, ink `#594b3d`, clay `#ae725b`, pan
 
 ## Icon
 
-The original 1024 × 1024 app icon is copied unchanged to `mindful-lock/public/assets/app-icon-1024.png`. Web sizes are derived from that original. Xcode supplies the App Store icon through the asset catalog; verify the archive contains the expected icon and that the original meets Apple's current opacity/asset requirements. Confirm artwork rights with the owner.
+The original 1024 × 1024 app icon is copied unchanged to `habitflip/public/assets/app-icon-1024.png`. Web sizes are derived from that original. Xcode supplies the App Store icon through the asset catalog; verify the archive contains the expected icon and that the original meets Apple's current opacity/asset requirements. Confirm artwork rights with the owner.
 
 ## Acceptance record
 

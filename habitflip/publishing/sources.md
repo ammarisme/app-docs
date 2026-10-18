@@ -23,7 +23,7 @@ app-docs clone starts at commit `48faa24` (`Redesign landing page for Finnish Pr
 - `docs/learn-finnish/index.html`: public privacy/use documentation pattern.
 - `docs/learn-finnish/support.html`: established support email `ammar.ofc@gmail.com`.
 
-Finnish Pro's servers, accounts, analytics/crash collection, remote config, and App Store ID do not describe Mindful Lock and were not copied.
+Finnish Pro's servers, accounts, analytics/crash collection, remote config, and App Store ID do not describe HabitFlip and were not copied.
 
 ## Apple primary sources
 

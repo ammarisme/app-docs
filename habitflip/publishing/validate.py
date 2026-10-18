@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the Mindful Lock publication bundle without third-party dependencies."""
+"""Validate the HabitFlip publication bundle without third-party dependencies."""
 import csv
 import json
 import re
@@ -83,7 +83,7 @@ check(len(keywords) <= 100, f'keywords: {len(keywords)}/100 bytes')
 for field in ['name', 'subtitle', 'promotional_text', 'keywords', 'description', 'release_notes']:
     check((PACK / f'app-store/en-US/{field}.txt').read_text().strip() == metadata[field], f'{field}: paste-ready copy matches JSON')
 for field, file in {'marketing_url': 'index.html', 'support_url': 'support.html', 'privacy_url': 'privacy.html'}.items():
-    expected = 'https://ammarisme.github.io/app-docs/mindful-lock/' + ('' if file == 'index.html' else file)
+    expected = 'https://ammarisme.github.io/app-docs/habitflip/' + ('' if file == 'index.html' else file)
     check(metadata[field] == expected, f'{field}: planned Pages URL matches')
 for name, size in [('app-icon-1024.png', 1024), ('app-icon-256.png', 256), ('apple-touch-icon.png', 180)]:
     data = (WEB / 'assets' / name).read_bytes()
