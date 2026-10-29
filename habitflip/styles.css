@@ -10,7 +10,6 @@
 @media (max-width:620px){.shots{display:flex;overflow-x:auto;gap:16px;scroll-snap-type:x mandatory;padding-bottom:10px;margin-right:-22px;padding-right:22px}.shot{flex:0 0 68%;scroll-snap-align:start}}
 
 /* Promotional video: no third-party requests until the visitor presses play. */
-.video-link{display:inline-block;margin:12px 0 12px 16px;font-size:15px}
 .promo-video{aspect-ratio:16/9;border:1px solid var(--line);border-radius:28px;overflow:hidden;background:var(--panel)}
 .promo-video:has(.promo-play[hidden]){display:none}
 .promo-play{width:100%;height:100%;border:0;background:radial-gradient(ellipse at center,var(--paper),var(--panel));color:var(--ink);font:inherit;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;cursor:pointer;padding:24px;text-align:center}
@@ -21,3 +20,7 @@
 .promo-video iframe{display:block;width:100%;height:100%;border:0}
 .video-note{font-size:13px;color:var(--muted);margin:16px 0 0}
 @media(max-width:620px){.promo-video{border-radius:18px}.play-icon{width:60px;height:60px;font-size:22px}.promo-play{gap:12px}}
+
+.section.promo-intro{border-top:0;padding:32px 0 40px}
+.promo-intro h2{margin:8px 0 24px}
+.promo-intro+.hero{border-top:1px solid var(--line)}
